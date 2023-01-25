@@ -2,7 +2,15 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: Scaffold(
+      home: Test(),
+    ));
+
+class Test extends StatelessWidget{
+  const Test({Key? key}) : super(key: key);
+  // Test({super.key});
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue[900],
           title: Text('Flutter Header'),
@@ -10,7 +18,7 @@ void main() => runApp(MaterialApp(
         ),
         body: Center(
             child: Text(
-          "This is body",
+          "Flutter body",
           style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -22,5 +30,6 @@ void main() => runApp(MaterialApp(
             child: Text("Click!"),
             onPressed: () => {}),
         backgroundColor: Colors.lightBlue[50],
-      ),
-    ));
+      );
+  }
+}
