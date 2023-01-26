@@ -12,24 +12,19 @@ class Test extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.lightBlue[900],
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
           title: Text('Flutter Header'),
           centerTitle: true,
         ),
         body: Center(
-            child: Text(
-          "Flutter body",
-          style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Color.fromARGB(255, 49, 49, 49),),
-        )),
+            child: Image(image: NetworkImage("https://images.unsplash.com/photo-1536859975388-b5e6623e9223?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"),)
+        
+        ),
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.lightBlue[900],
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
             child: Text("Click!"),
             onPressed: () => {}),
-        backgroundColor: Colors.lightBlue[50],
+        backgroundColor: Color.fromARGB(255, 235, 238, 240),
       );
   }
 }
