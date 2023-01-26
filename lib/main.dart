@@ -17,13 +17,12 @@ class Test extends StatelessWidget {
         title: Text('Flutter Header'),
         centerTitle: true,
       ),
-      body: Center(
-          child: IconButton(
-            onPressed: ()=>{print("you clicked me")},
-            icon: Icon(Icons.alternate_email),
-            color: Colors.amber,
-          )
-          ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(10.0),
+        color: Colors.grey[400],
+        child: Text("Hello"),
+      ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Color.fromARGB(255, 0, 0, 0),
           child: Text("Click!"),
