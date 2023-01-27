@@ -8,18 +8,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        // remove debug banner
+        // Remove debug banner
         debugShowMaterialGrid: false,
-        //this is home widget
+        //This is home widget
         home: Scaffold(
+          
           appBar: AppBar(
             backgroundColor: Colors.lightBlue[900],
             title: Text("Header"),
             centerTitle: true,
           ),
           body: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            // height: MediaQuery.of(context).size.height,
+            // width: MediaQuery.of(context).size.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
