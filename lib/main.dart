@@ -8,30 +8,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        // Remove debug banner
-        debugShowMaterialGrid: false,
-        //This is home widget
-        home: Scaffold(
-          
-          appBar: AppBar(
-            backgroundColor: Colors.lightBlue[900],
-            title: Text("Header"),
-            centerTitle: true,
-          ),
-          body: Container(
-            // height: MediaQuery.of(context).size.height,
-            // width: MediaQuery.of(context).size.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text("click"),
-                ),
-              ],
-            ),
-          ),
-        ));
+      title: "Demo Application",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Home")),
+      body: Center(child: Text("Body")),
+    );
   }
 }
