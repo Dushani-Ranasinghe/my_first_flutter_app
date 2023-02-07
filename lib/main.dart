@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Demo Application",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme:
+          ThemeData(primarySwatch: Colors.blue),
       home: HomePage(),
     );
   }
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
-      body: Center(child: Text("Body")),
+      body: Container(child: Text("Body")),
     );
   }
 }
