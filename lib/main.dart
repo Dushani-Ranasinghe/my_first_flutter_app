@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'components/post.dart';
-import 'components/story.dart';
+import 'package:my_first_flutter_app/screens/insta_layout.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,27 +25,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         // appBar: AppBar(title: Text("Header")),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 200,
-              child: ListView.builder( 
-                itemCount: _stories.length,itemBuilder: ((context, index) {
-                return Story(storyText: _stories[index],);
-              }),
-                scrollDirection: Axis.horizontal,
+        body: Center(child: ClipRRect(
+          borderRadius: BorderRadius.circular(40),
+          child: Container(
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration( color: Colors.amber[400]),
               ),
-            ),
-            Expanded(
-              child: ListView.builder(
-              itemCount: _posts.length,
-              itemBuilder: (context, index){
-              return Post(postText: _posts[index]);
-          }),
-            ),
-          ]
-        ),);
+        ),
+            // InstaLayout(stories: _stories, posts: _posts),
+        ));
   }
 }
-
-
