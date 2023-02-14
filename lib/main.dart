@@ -17,24 +17,52 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   // final List _posts = ['post 1', 'post 2', 'post 3', 'post 4'];
-  // final List _stories = ['story1', 'story 2', 'story 3', 'story 4', 'story 5'];
+
+  //variable
+  int number = 0;
+  //method
+  void increaseNum(){
+    setState(() {
+      number++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         // appBar: AppBar(title: Text("Header")),
-        body: GridView.builder(itemCount: 5,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1), itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
+        body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            "Tapped $number times",
+            style: TextStyle(fontSize: 20),
+          ),
+          GestureDetector(
+            onTap: increaseNum,
             child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.blue,
+              ),
+              child: Text(
+                "Tap Here",
+                style: TextStyle(fontSize: 20),
+              ),
             ),
-          );
-          
-        }));
+          ),
+        ],
+      ),
+    ));
   }
 }
 
