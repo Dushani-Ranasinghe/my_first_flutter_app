@@ -24,41 +24,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         // appBar: AppBar(title: Text("Header")),
-        body: GridView.count(crossAxisCount: 1, children: [
-          Padding(
+        body: GridView.builder(itemCount: 5,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1), itemBuilder: (context, index) {
+          return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: 100,
               width: 100,
-              color: Colors.blue[100],
-            ),
-          ),
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
               height: 100,
-              width: 100,
-              color: Colors.blue[100],
+              color: Colors.amber,
             ),
-          ),
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue[100],
-            ),
-          ),
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue[100],
-            ),
-          ),
+          );
           
-        ],));
+        }));
   }
 }
 
