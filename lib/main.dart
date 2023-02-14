@@ -23,36 +23,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         // appBar: AppBar(title: Text("Header")),
-        body: Column(children: [
-      Expanded(
-        child: Container(
-          color: Colors.blue,
-          child: Center(
-              child: Text(
-            "First Column",
-            style: TextStyle(fontSize: 20),
-          )),
-        ),
+        body: Column(mainAxisAlignment: MainAxisAlignment.start, 
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+      Container(
+        height: 100,
+         width: 100,
+        color: Colors.blueGrey[900],
       ),
-      Expanded(
-        child: Container(
-          color: Colors.pink,
-          child: Center(
-              child: Text(
-            "Second Column",
-            style: TextStyle(fontSize: 20),
-          )),
-        ),
+      Container(
+        height: 100,
+        width: 100,
+        color: Colors.blueGrey[600],
       ),
-      Expanded(
-        child: Container(
-          color: Colors.green,
-          child: Center(
-              child: Text(
-            "Third Column",
-            style: TextStyle(fontSize: 20),
-          )),
-        ),
+      Container(
+        height: 100,
+        width: 100,
+        color: Colors.blueGrey[300],
       ),
     ]));
   }
