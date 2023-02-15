@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'user_pages/user_home.dart';
 // import 'package:my_first_flutter_app/screens/insta_layout.dart';
 
 void main() => runApp(MyApp());
@@ -45,12 +47,7 @@ class _HomePageState extends State<HomePage> {
 
   //page lists
   final List<Widget> _pages = [
-    Center(
-      child: Text(
-        "Home",
-        style: TextStyle(fontSize: 40),
-      ),
-    ),
+    UserHome(),
     Center(
       child: Text(
         "Message",
@@ -77,12 +74,23 @@ class _HomePageState extends State<HomePage> {
         title: Text("Header"),
         backgroundColor: Colors.deepPurple[200],
         elevation: 0,
-        leading: IconButton(onPressed: () {
-          
-        }, icon: Icon(Icons.menu),),
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person))
-        ],
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.deepPurple[200],
+          child: ListView(children: [
+            DrawerHeader(child: Center(child: Text("L O G O", style: TextStyle(fontSize: 25),))),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("HOME"),
+              onTap: (() {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context)=> UserHome())
+                );
+              }),
+            )
+          ]),
+        ),
       ),
       body: _pages[_selectedNavIndex],
       bottomNavigationBar: BottomNavigationBar(
