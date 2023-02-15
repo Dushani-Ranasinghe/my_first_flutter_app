@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Demo Application",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      // theme: ThemeData(primarySwatch: Colors.blue),
       home: HomePage(),
     );
   }
@@ -37,51 +37,66 @@ class _HomePageState extends State<HomePage> {
   // bottom navigation bar
   int _selectedNavIndex = 0;
 
-  void _setBottomNav(int index){
+  void _setBottomNav(int index) {
     setState(() {
-      _selectedNavIndex = index ;
+      _selectedNavIndex = index;
     });
   }
 
+  //page lists
+  final List<Widget> _pages = [
+    Center(
+      child: Text(
+        "Home",
+        style: TextStyle(fontSize: 40),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Message",
+        style: TextStyle(fontSize: 40),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Account",
+        style: TextStyle(fontSize: 40),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Setting",
+        style: TextStyle(fontSize: 40),
+      ),
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text("Header")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              "Tapped $number times",
-              style: TextStyle(fontSize: 20),
-            ),
-            GestureDetector(
-              onTap: increaseNum,
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.blue,
-                ),
-                child: Text(
-                  "Tap Here",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text("Header"),
+        backgroundColor: Colors.deepPurple[200],
+        elevation: 0,
+        leading: IconButton(onPressed: () {
+          
+        }, icon: Icon(Icons.menu),),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.person))
+        ],
       ),
-      bottomNavigationBar:
-          BottomNavigationBar(
-            currentIndex: _selectedNavIndex,
-            onTap: _setBottomNav,
-            type: BottomNavigationBarType.fixed, items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-        BottomNavigationBarItem(icon: Icon(Icons.message), label: "message"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "account"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "settings")
-      ]),
+      body: _pages[_selectedNavIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedNavIndex,
+          onTap: _setBottomNav,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.message), label: "message"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "account"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "settings")
+          ]),
     );
   }
 }
