@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Demo Application",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(bodyText2: TextStyle(fontSize: 35))),
       home: HomePage(),
     );
   }
@@ -27,8 +29,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          ),
-      );
+      body: Center(
+        child: Column(children: [
+          Text('Height: ${MediaQuery.of(context).size.height.toString()}'),
+          Text('Width: ${MediaQuery.of(context).size.width.toString()}'),
+          Text('Aspect ratio: ${MediaQuery.of(context).size.aspectRatio.toStringAsFixed(2)}'),
+        ]),
+      ),
+    );
   }
 }
