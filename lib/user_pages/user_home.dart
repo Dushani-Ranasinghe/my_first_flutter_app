@@ -6,7 +6,7 @@ class UserHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         child: Center(child: Text("This is Home")),
       ),
     );
