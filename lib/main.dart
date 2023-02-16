@@ -17,60 +17,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Demo Application",
       theme: ThemeData(
-          primarySwatch: Colors.blue,),
+        primarySwatch: Colors.blue,
+      ),
       home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  void _showDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            backgroundColor: Colors.pink[100],
-            title: Text("Alert!"),
-            content: Text("This is an alert."),
-            actions: [
-              MaterialButton(
-                onPressed: (() {}),
-                child: Text("OK"),
-              ),
-               MaterialButton(
-                onPressed: (() {
-                  Navigator.pop(context);
-                }),
-                child: Text("Cancel"),
-              )
-            ],
-          );
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[50],
-      body: Center(
-        child: MaterialButton(
-          color: Colors.deepPurple[100],
-          onPressed: _showDialog,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              "Click Here",
-              style: TextStyle(fontSize: 25),
-            ),
-          ),
-        ),
+      backgroundColor: Colors.pink[500],
+      body: Column(
+        children: [
+          Center(
+              child: RichText(
+            text: TextSpan(style: TextStyle(fontSize: 15), children: [
+              TextSpan(
+                  text: "Hey ", style: TextStyle(fontWeight: FontWeight.bold)),
+              TextSpan(
+                  text:
+                      "gsudfgaie afgua asguisaugdfa asgdfaugsfa asugdfaiu sdgfwsiougfoig")
+            ]),
+          )),
+        ],
       ),
     );
   }
