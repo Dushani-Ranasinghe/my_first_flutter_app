@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'user_pages/tab_bar.dart';
-
+// import 'user_pages/tab_bar.dart';
 // import 'user_pages/user_sliver.dart';
 // import 'user_pages/user_home.dart';
 // import 'package:my_first_flutter_app/screens/insta_layout.dart';
@@ -27,8 +26,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBarScreen();
+    return Scaffold(
+        body: Center(
+          ),
+      );
   }
 }
-
-
