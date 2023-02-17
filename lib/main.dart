@@ -26,10 +26,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.pink[100],
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: UserInput(),
+      body: Center(
+        child: UserSlider(),
       ),
     );
   }
 }
+
