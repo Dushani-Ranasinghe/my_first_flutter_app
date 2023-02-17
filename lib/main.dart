@@ -1,6 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'user_pages/user_timer.dart';
+
 // import 'user_pages/tab_bar.dart';
 // import 'user_pages/user_sliver.dart';
 // import 'user_pages/user_home.dart';
@@ -30,20 +32,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[500],
-      body: Column(
-        children: [
-          Center(
-              child: RichText(
-            text: TextSpan(style: TextStyle(fontSize: 15), children: [
-              TextSpan(
-                  text: "Hey ", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextSpan(
-                  text:
-                      "gsudfgaie afgua asguisaugdfa asgdfaugsfa asugdfaiu sdgfwsiougfoig")
-            ]),
-          )),
-        ],
+      // backgroundColor: Colors.pink[100],
+      body: Center(
+        child: UserTimer(),
       ),
     );
   }
