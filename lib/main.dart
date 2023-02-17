@@ -1,12 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'user_pages/user_timer.dart';
-
-// import 'user_pages/tab_bar.dart';
-// import 'user_pages/user_sliver.dart';
-// import 'user_pages/user_home.dart';
-// import 'package:my_first_flutter_app/screens/insta_layout.dart';
+import 'user_pages/user_page_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +29,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Colors.pink[100],
       body: Center(
-        child: UserTimer(),
+        child: UserPageView(),
       ),
     );
   }
